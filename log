@@ -27,3 +27,9 @@ hashmap.c:228:12: error: 'true' undeclared (first use in this function)
             ^~~~
 hashmap.c:228:12: note: each undeclared identifier is reported only once for each function it appears in
 f3ef708
+Thu, Apr 17, 2025  5:48:13 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 60/70
+3f98b0b
