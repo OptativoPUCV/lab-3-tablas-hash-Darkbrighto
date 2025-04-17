@@ -210,6 +210,8 @@ retorna el primer **Pair** válido del arreglo buckets. Pair * nextMap(HashMap *
 el siguiente **Pair** del arreglo buckets a partir índice current. Recuerde actualizar el índice.
 */
 Pair * firstMap(HashMap * map) {
+    if (map == NULL || map->capacity == 0) return NULL;
+
     for (long pos = 0; pos < map->capacity; pos++) {
         if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
             map->current = pos;
@@ -222,16 +224,16 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
     if (map == NULL || map->capacity == 0) return NULL;
 
-    long pos = (map->current + 1) % map->capacity;
-    long startPos = pos;
+    long startPos = (map->current + 1) % map->capacity;
+    long pos = startPos;
 
-    while (pos != startPos) {
+    do {
         if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
             map->current = pos;
             return map->buckets[pos];
         }
         pos = (pos + 1) % map->capacity;
-    }
+    } while (pos != startPos);
 
     return NULL;
 }
