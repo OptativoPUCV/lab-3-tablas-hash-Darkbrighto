@@ -220,10 +220,10 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    if (map->current == -1) return NULL;
+    if (map->current == -1) return NULL; // No se ha comenzado a recorrer
 
-    long start = (map->current + 1) % map->capacity;
-    long pos = start;
+    long pos = (map->current + 1) % map->capacity;
+    long start = pos;
 
     while (1) {
         if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
@@ -232,7 +232,7 @@ Pair * nextMap(HashMap * map) {
         }
 
         pos = (pos + 1) % map->capacity;
-        if (pos == start) break;
+        if (pos == start) break; // recorrimos todo el arreglo sin encontrar otro válido
     }
 
     return NULL;
