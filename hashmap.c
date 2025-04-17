@@ -220,18 +220,18 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    if (map->current == -1) return NULL; // Si no se ha recorrido, retorna NULL
+    if (map == NULL || map->capacity == 0) return NULL;
 
     long pos = (map->current + 1) % map->capacity;
     long startPos = pos;
 
-    while (map->buckets[pos] == NULL || map->buckets[pos]->key == NULL) {
+    while (pos != startPos) {
+        if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
+            map->current = pos;
+            return map->buckets[pos];
+        }
         pos = (pos + 1) % map->capacity;
-        if (pos == startPos) return NULL; // Vuelta completa sin encontrar un par válido
     }
 
-    map->current = pos;
-    return map->buckets[pos];
+    return NULL;
 }
-
-
