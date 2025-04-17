@@ -221,16 +221,19 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     long pos = (map->current + 1) % map->capacity;
-    long originalPos = map->current;
+    long startPos = pos;
 
-    while (pos != originalPos) {
+    while (map->buckets[pos] != NULL || pos != startPos) {
         if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
             map->current = pos;
             return map->buckets[pos];
         }
+
         pos = (pos + 1) % map->capacity;
+        if (pos == startPos) break; // evitamos loop infinito
     }
 
     return NULL;
 }
+
 
