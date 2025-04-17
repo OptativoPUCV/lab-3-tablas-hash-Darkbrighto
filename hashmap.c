@@ -224,7 +224,7 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
     if (map == NULL || map->capacity == 0) return NULL;
 
-    long startPos = (map->current + 1) % map->capacity;
+    long startPos = (map->current + 1) % map->capacity; // Start from the next position
     long pos = startPos;
 
     do {
