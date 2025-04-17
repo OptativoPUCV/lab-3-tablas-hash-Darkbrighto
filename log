@@ -16,3 +16,14 @@ Thu, Apr 17, 2025  5:46:57 PM:
  tests:  16|1
 total_score: 60/70
 0c62f16
+Thu, Apr 17, 2025  5:47:57 PM: 
+ hashmap.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'nextMap':
+hashmap.c:228:12: error: 'true' undeclared (first use in this function)
+     while (true) {
+            ^~~~
+hashmap.c:228:12: note: each undeclared identifier is reported only once for each function it appears in
+f3ef708
