@@ -227,13 +227,14 @@ Pair * nextMap(HashMap * map) {
     long startPos = (map->current + 1) % map->capacity; // Start from the next position
     long pos = startPos;
 
-    do {
+    while( pos != startPos ) 
+    {
         if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
             map->current = pos;
             return map->buckets[pos];
         }
-        pos++;
-    } while (pos != startPos);
+        pos = (pos + 1) % map->capacity;
+    }
 
     return NULL;
 }
