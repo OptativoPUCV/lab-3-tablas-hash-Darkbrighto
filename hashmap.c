@@ -234,10 +234,9 @@ Pair * nextMap(HashMap * map) {
     */
     if (map == NULL || map->capacity == 0) return NULL;
 
-    long startPos = (map->current);
-    long pos = ( startPos + 1 );
+    long pos = ( map->current + 1 );
 
-    while( pos != startPos ) 
+    while( pos < map->capacity ) 
     {
         //works
         if (map->buckets[pos] != NULL && map->buckets[pos]->key != NULL) {
