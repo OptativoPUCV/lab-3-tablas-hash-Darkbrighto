@@ -139,3 +139,9 @@ hashmap.c:225:10: error: unused variable 'startPos' [-Werror=unused-variable]
           ^~~~~~~~
 cc1.exe: all warnings being treated as errors
 7cb5366
+Thu, Apr 17, 2025  9:10:56 PM: 
+ hashmap.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  16|1
+total_score: 60/70
+a07c056
