@@ -222,6 +222,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
+    /*
     for(long pos = map->current + 1; pos < map->capacity; pos = (pos+1 )% map->capacity ){
         if(map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
             map->current = pos;
@@ -230,7 +231,7 @@ Pair * nextMap(HashMap * map) {
     }
     
     return NULL;
-    /*
+    */
     if (map == NULL || map->capacity == 0) return NULL;
 
     long startPos = (map->current) % map->capacity;
@@ -242,9 +243,8 @@ Pair * nextMap(HashMap * map) {
             map->current = pos;
             return map->buckets[pos];
         }
-        pos = (pos + 1) % map->capacity;
+        pos++;
     }
 
     return NULL;
-    */
 }
