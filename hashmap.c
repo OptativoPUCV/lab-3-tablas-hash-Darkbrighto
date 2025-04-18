@@ -222,7 +222,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    long startPos = (map->current +1) % map->capacity;
+    long startPos = (map->current);
 
     for(long pos = map->current + 1; pos < map->capacity; pos = (pos+1 )% map->capacity ){
         if(map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
