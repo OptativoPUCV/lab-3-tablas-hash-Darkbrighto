@@ -229,7 +229,6 @@ Pair * nextMap(HashMap * map) {
             map->current = pos;
             return map->buckets[pos];
         }
-        if ( pos == startPos ) return NULL;
     }
     
     return NULL;

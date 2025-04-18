@@ -128,3 +128,14 @@ Thu, Apr 17, 2025  9:09:55 PM:
  tests:  14|1
 total_score: 60/70
 98a0671
+Thu, Apr 17, 2025  9:10:36 PM: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'nextMap':
+hashmap.c:225:10: error: unused variable 'startPos' [-Werror=unused-variable]
+     long startPos = (map->current + 1);
+          ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+7cb5366
